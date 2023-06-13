@@ -24,7 +24,6 @@
   },
   "homepage": "https://github.com/SteffenBlake/PixxelFilter-NPM#readme",
   "dependencies": {
-    "bent": "^7.3.12",
-    "dotenv-defaults": "^5.0.2"
+    "bent": "^7.3.12"
   }
 }
