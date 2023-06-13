@@ -1,5 +1,3 @@
-# pixxel-filter-style
-
 # Installation
 
 `npm install git+https://github.com/SteffenBlake/pixxel-ninja-parser`
