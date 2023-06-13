@@ -1,11 +1,11 @@
 {
   "name": "pixxel-ninja-parser",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Loads poe ninja API data into PoeFilterX compatible variable json",
   "main": "./run.js",
   "type": "module",
   "files": [
-    "./src/*"
+    "./src/**/*"
   ],
   "exports": {
     ".": "./src/pixxel-ninja-parser.js"

@@ -23,18 +23,26 @@ export class PixxelNinjaParser {
 
     #cache = {};
 
-    constructor() {
-        this.#league = process.env.LEAGUE;
-        this.#priceBreakpoints = JSON.parse(process.env.PRICE_BREAKPOINTS);
-        this.#expiration_ms = parseInt(process.env.EXPIRATION_MS);
-        this.#apiDelay_ms = parseInt(process.env.APIDELAY_MS);
+    constructor({
+        league,
+        priceBreakpoints,
+        expiration_ms = 21600000,
+        apiDelay_ms = 3000,
+        cachePath = `./`,
+        outputPath = `./output.json`,
+        apiEndpoint = `https://poe.ninja/api/data`
+    }) {
+        this.#league = league;
+        this.#priceBreakpoints = priceBreakpoints;
+        this.#expiration_ms = expiration_ms;
+        this.#apiDelay_ms = apiDelay_ms;
 
-        this.#cachePath = process.env.CACHE_PATH;
-        this.#outputPath = process.env.OUTPUT_PATH;
+        this.#cachePath = cachePath;
+        this.#outputPath = outputPath;
         this.#timestampPath = pathJoin(this.#cachePath, `.timestamp`);
 
-        this.#itemEndpoint = `${process.env.API_ENDPOINT}/itemoverview`;
-        this.#currencyEndpoint = `${process.env.API_ENDPOINT}/currencyoverview`;
+        this.#itemEndpoint = `${apiEndpoint}/itemoverview`;
+        this.#currencyEndpoint = `${apiEndpoint}/currencyoverview`;
     }
 
     async runAsync() {
